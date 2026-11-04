@@ -19,6 +19,6 @@ test.describe('AMOZ Company Admin Logout Functionality', () => {
     await expect(page.getByText('Welcome to Company Admin')).toBeVisible();
     await expect(page.getByPlaceholder('Enter Email Id')).toBeVisible();
   
-  await page.waitForTimeout(5000); // Wait for 2 seconds to ensure the page has fully loaded
+  await page.waitForTimeout(5000); // Wait for 5 seconds to ensure the page has fully loaded
   });
 });
