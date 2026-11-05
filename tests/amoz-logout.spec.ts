@@ -22,4 +22,5 @@ test.describe('AMOZ Company Admin Logout Functionality', () => {
   await page.waitForTimeout(5000); // Wait for 5 seconds to ensure the page has fully loaded
  
 });
+
 });
