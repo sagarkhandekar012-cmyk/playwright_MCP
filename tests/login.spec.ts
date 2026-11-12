@@ -4,7 +4,7 @@ import { getTestCaseByScenario } from './excel-data';
 const loginUrl = 'https://superadmin-amoz.betadelivery.com/login';
 const validEmail = 'amozit@yopmail.com';
 const validPassword = 'Admin@123';
-const otp = process.env.OTP ?? '1234';
+const otp = process.env.OTP || '1234';
 const loginTestCase = getTestCaseByScenario('Valid login');
 
 test.describe('Login Functionality', () => {
