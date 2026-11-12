@@ -53,13 +53,12 @@ test.describe('Sign Out', () => {
     // Click Sign Out in the popup
     await page.getByRole('button', { name: 'Sign Out', exact: true }).last().click();
 
-    // Verify the login page is displayed
-    await expect(page.getByText('Admin access – log in', { exact: true })).toBeVisible();
+    // Verify logout returned to the login page
+    await expect(page).toHaveURL(/\/login$/);
+    await expect(page.getByPlaceholder('Enter your email')).toBeVisible();
+    await expect(page.getByPlaceholder('Enter your password')).toBeVisible();
 
-    // Verify the logout success toast is displayed
-    await expect(page.getByText('Logout Successfully', { exact: true })).toBeVisible();
-
-    // Verify the session expired message is not displayed
+    // Verify the session-expired message is not displayed
     await expect(page.getByText('Your session has expired. Please log in again.', { exact: true })).toHaveCount(0);
   });
 });

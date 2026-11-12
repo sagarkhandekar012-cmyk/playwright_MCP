@@ -4,7 +4,7 @@ import { readTestCases } from './excel-data';
 const loginUrl = 'https://superadmin-amoz.betadelivery.com/login';
 const validEmail = 'amozit@yopmail.com';
 const validPassword = 'Admin@123';
-const otp = process.env.OTP ?? '1234';
+const otp = '1234';
 
 async function openLoginPage(page: Page) {
   await page.goto(loginUrl);

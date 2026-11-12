@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 
 export type TestCaseRow = {
@@ -11,6 +11,7 @@ export type TestCaseRow = {
 };
 
 const csvPath = path.resolve(__dirname, '..', 'AMOZ_Admin_Test_Cases.csv');
+const resultsCsvPath = path.resolve(__dirname, '..', 'AMOZ_Admin_Test_Results.csv');
 
 function parseCsvRow(line: string): string[] {
   const fields: string[] = [];
@@ -39,6 +40,10 @@ function parseCsvRow(line: string): string[] {
   return fields;
 }
 
+function escapeCsvField(value: string): string {
+  return /[",\r\n]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value;
+}
+
 export function readTestCases(): TestCaseRow[] {
   const lines = readFileSync(csvPath, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/).filter(Boolean);
   const headers = parseCsvRow(lines.shift() ?? '');
@@ -56,6 +61,30 @@ export function readTestCases(): TestCaseRow[] {
       'Bug ID': row['Bug ID'].trim(),
     };
   }).filter((row) => Boolean(row.ID || row.Scenario));
+}
+
+export function writeTestCaseResults(statuses: ReadonlyMap<string, 'Pass' | 'Fail'>): void {
+  const lines = readFileSync(csvPath, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/).filter(Boolean);
+  const headers = parseCsvRow(lines.shift() ?? '');
+  const idIndex = headers.indexOf('ID');
+  const statusIndex = headers.indexOf('Pass/Fail');
+
+  if (idIndex < 0 || statusIndex < 0) {
+    throw new Error(`CSV must contain ID and Pass/Fail columns: ${csvPath}`);
+  }
+
+  const updatedRows = lines.map((line) => {
+    const values = parseCsvRow(line);
+    values[statusIndex] = statuses.get(values[idIndex] ?? '') ?? 'Not Run';
+
+    return headers.map((_, index) => escapeCsvField(values[index] ?? '')).join(',');
+  });
+
+  writeFileSync(
+    resultsCsvPath,
+    `\uFEFF${[headers.map(escapeCsvField).join(','), ...updatedRows, ''].join('\r\n')}`,
+    'utf8',
+  );
 }
 
 export function getTestCaseByScenario(scenario: string): TestCaseRow {
