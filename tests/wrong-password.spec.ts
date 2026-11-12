@@ -1,11 +1,13 @@
 import { test, expect } from '@playwright/test';
+import { getTestCaseByScenario } from './excel-data';
 
 const loginUrl = 'https://superadmin-amoz.betadelivery.com/login';
 const validEmail = 'amozit@yopmail.com';
 const wrongPassword = 'Wrong@123';
+const wrongPasswordTestCase = getTestCaseByScenario('Wrong password');
 
 test.describe('Wrong Password', () => {
-  test('shows an error and keeps the user on the login page', async ({ page }) => {
+  test(`shows an error and keeps the user on the login page (${wrongPasswordTestCase.ID})`, async ({ page }) => {
     // Navigate to the login page
     await page.goto(loginUrl);
 

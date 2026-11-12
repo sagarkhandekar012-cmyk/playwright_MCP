@@ -1,9 +1,11 @@
 import { test, expect } from '@playwright/test';
+import { getTestCaseByScenario } from './excel-data';
 
 const loginUrl = 'https://superadmin-amoz.betadelivery.com/login';
+const emptyFieldsTestCase = getTestCaseByScenario('Empty fields');
 
 test.describe('Empty Fields', () => {
-  test('shows required-field validation when fields are empty', async ({ page }) => {
+  test(`shows required-field validation when fields are empty (${emptyFieldsTestCase.ID})`, async ({ page }) => {
     // Navigate to the login page
     await page.goto(loginUrl);
 

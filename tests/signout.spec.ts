@@ -1,9 +1,11 @@
 import { test, expect } from '@playwright/test';
+import { getTestCaseByScenario } from './excel-data';
 
 const loginUrl = 'https://superadmin-amoz.betadelivery.com/login';
 const validEmail = 'amozit@yopmail.com';
 const validPassword = 'Admin@123';
 const otp = process.env.OTP ?? '1234';
+const validLoginTestCase = getTestCaseByScenario('Valid login');
 
 async function login(page: Parameters<typeof test>[0]['page']) {
   // Navigate to the login page
@@ -35,7 +37,7 @@ async function login(page: Parameters<typeof test>[0]['page']) {
 }
 
 test.describe('Sign Out', () => {
-  test('signs out successfully and does not show session expired toast', async ({ page }) => {
+  test(`signs out successfully and does not show session expired toast (${validLoginTestCase.ID})`, async ({ page }) => {
     // Login with valid user
     await login(page);
 
