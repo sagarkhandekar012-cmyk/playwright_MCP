@@ -26,4 +26,5 @@ test.describe('Wrong Password', () => {
     // Verify the user stays on the login page
     await expect(page).toHaveURL(/\/login$/);
   });
+  
 });
