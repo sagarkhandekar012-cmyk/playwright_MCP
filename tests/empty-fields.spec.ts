@@ -11,7 +11,7 @@ test.describe('Empty Fields', () => {
 
     // Leave email and password empty
 
-    // Click Sign In
+    // Click Sign In 
     await page.getByRole('button', { name: 'Sign In', exact: true }).click();
 
     // Verify required-field errors are displayed
