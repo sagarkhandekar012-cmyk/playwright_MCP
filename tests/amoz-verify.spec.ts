@@ -95,7 +95,7 @@ test.describe('AMOZ Company Admin login and dashboard', () => {
     }
 
     // Open the Drive Cars profile menu.
-    await userMenu.click();
+    await userMenu.click(); 
     // Verify that the profile menu displays the account username.
     await expect(page.getByText('drivecars', { exact: true })).toBeVisible();
     // Verify that the profile menu displays the account email address.
