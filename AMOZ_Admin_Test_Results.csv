@@ -1,4 +1,4 @@
-﻿ID,Scenario,Steps,Expected,Pass/Fail,Bug ID
+ID,Scenario,Steps,Expected,Pass/Fail,Bug ID
 AMOZ_ADM_TC_01,Page loads,1. Open /login,"Logo, ""Admin access ? log in"", email, password, Forgot password?, Sign In, EN/AR toggle visible",Pass,
 AMOZ_ADM_TC_02,Valid login,1. Enter valid email 2. Enter valid password 3. Click Sign In,Redirects to OTP screen,Pass,
 AMOZ_ADM_TC_03,Toast on OTP send,Do AMOZ_ADM_TC_02,Green toast OTP sent successfully,Pass,
