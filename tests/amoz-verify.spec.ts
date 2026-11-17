@@ -94,7 +94,7 @@ test.describe('AMOZ Company Admin login and dashboard', () => {
       await expect(page.getByRole('button', { name: tab, exact: true })).toBeVisible();
     }
 
-    // Open the Drive Cars profile menu. 
+    // Open the Drive Cars profile menu.  
     await userMenu.click();  
     // Verify that the profile menu displays the account username.
     await expect(page.getByText('drivecars', { exact: true })).toBeVisible();
