@@ -164,4 +164,4 @@ test.describe('AMOZ Company Admin Login Page', () => {
     // Verify that the English welcome heading is displayed again.
     await expect(page.getByText('Welcome to Company Admin')).toBeVisible();
   });
-});
+}); 
