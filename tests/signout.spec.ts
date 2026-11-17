@@ -46,7 +46,7 @@ test.describe('Sign Out', () => {
   
   test(`signs out successfully and does not show session expired toast (${validLoginTestCase.ID})`, async ({ page }) => {
     // Login with valid user
-    await login(page);
+    await login(page); 
 
     // Click Admin User at the bottom left
     await page.getByText('Admin User', { exact: true }).click();
