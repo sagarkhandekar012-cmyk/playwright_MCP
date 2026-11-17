@@ -18,7 +18,7 @@ test.describe('Login Functionality', () => {
     // Enter email 
     await page.getByPlaceholder('Enter your email').fill(validEmail);
 
-    // Enter password
+    // Enter password 
     await page.getByPlaceholder('Enter your password').fill(validPassword);
 
     // Click Sign In
