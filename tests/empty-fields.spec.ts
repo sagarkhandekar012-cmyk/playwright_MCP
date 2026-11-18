@@ -18,4 +18,4 @@ test.describe('Empty Fields', () => {
     await expect(page.getByText('Email is required', { exact: true })).toBeVisible();
     await expect(page.getByText('Password is required', { exact: true })).toBeVisible();
   });
-});
+}); 
