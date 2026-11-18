@@ -14,7 +14,7 @@ test.describe('Login Functionality', () => {
 
     // Verify the login page is displayed
     await expect(page.getByText('Admin access – log in', { exact: true })).toBeVisible();
-
+  
     // Enter email 
     await page.getByPlaceholder('Enter your email').fill(validEmail);
 
