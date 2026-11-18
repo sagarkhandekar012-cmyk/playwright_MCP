@@ -15,7 +15,7 @@ test.describe('AMOZ Company Admin Logout Functionality', () => {
     await expect(signOutOption).toBeVisible();
     await signOutOption.click();
 
-    await expect(page).toHaveURL(/\/login$/);
+    await expect(page).toHaveURL(/\/login$/); 
     await expect(page.getByText('Welcome to Company Admin')).toBeVisible();
     await expect(page.getByPlaceholder('Enter Email Id')).toBeVisible();
   
