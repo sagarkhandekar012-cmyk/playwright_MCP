@@ -164,4 +164,15 @@ test.describe('AMOZ Company Admin Login Page', () => {
     // Verify that the English welcome heading is displayed again.
     await expect(page.getByText('Welcome to Company Admin')).toBeVisible();
   });
+
+  test('TC12: displays required-field validation when the email is empty', async ({ page }) => {
+    // Enter a password while leaving the email blank.
+    await page.getByPlaceholder('Enter Password').fill(validPassword);
+    // Submit the form without an email.
+    await page.getByRole('button', { name: 'Login', exact: true }).click();
+
+    // Verify that validation requests an email and keeps the user on the login page.
+    await expect(page.getByText('Email is required', { exact: true })).toBeVisible();
+    await expect(page).toHaveURL(/\/login$/);
+  });
 }); 
