@@ -147,7 +147,7 @@ export function getTestCaseByScenario(scenario: string): TestCaseRow {
   if (!match) {
     throw new Error(`No CSV test case found for scenario: ${scenario}`);
   }
-
+  
   // Return the matching test-case row.
   return match;
 }
