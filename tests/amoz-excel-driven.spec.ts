@@ -24,7 +24,7 @@ async function loginToDashboard(page: Page) {
   await expect(otpInputs).toHaveCount(4);
   for (let index = 0; index < otp.length; index++) {
     await otpInputs.nth(index).fill(otp[index]); 
-  }
+  } 
   await page.getByRole('button', { name: 'Verify', exact: true }).click();
   await expect(page.getByText('Dashboard Overview', { exact: true })).toBeVisible();
 }
