@@ -49,7 +49,7 @@ test.describe('AMOZ Company Admin Login Page', () => {
     // Verify that the dashboard's Today's Bookings section is visible.
     await expect(page.getByText(/Today's Bookings/i)).toBeVisible();
   });
- 
+  
   test('TC3: shows an error and stays on the login page for an invalid password', async ({ page }) => {
     // Enter the registered email address in the email field.
     await page.getByPlaceholder('Enter Email Id').fill(validEmail);
