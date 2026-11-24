@@ -9,7 +9,7 @@ test.describe('Empty Fields', () => {
     // Navigate to the login page
     await page.goto(loginUrl);
  
-    // Leave email and password empty
+    // Leave email and password empty 
 
     // Click Sign In 
     await page.getByRole('button', { name: 'Sign In', exact: true }).click();
