@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import { readTestCases } from './excel-data';
-
+ 
 const loginUrl = 'https://superadmin-amoz.betadelivery.com/login';
 const validEmail = 'amozit@yopmail.com';
 const validPassword = 'Admin@123';
