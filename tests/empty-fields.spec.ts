@@ -8,7 +8,7 @@ test.describe('Empty Fields', () => {
   test(`shows required-field validation when fields are empty (${emptyFieldsTestCase.ID})`, async ({ page }) => {
     // Navigate to the login page
     await page.goto(loginUrl);
-
+ 
     // Leave email and password empty
 
     // Click Sign In 
