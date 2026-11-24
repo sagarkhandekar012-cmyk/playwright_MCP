@@ -14,7 +14,7 @@ async function logIn(page: Page) {
   // Confirm that login navigated to the rental-vehicle dashboard.
   await expect(page).toHaveURL(/\/rent-vehicle\/dashboard$/);
 }
-
+ 
 test.describe('AMOZ Company Admin login and dashboard', () => {
   test.beforeEach(async ({ page }) => {
     // Open the application login page before each test.
