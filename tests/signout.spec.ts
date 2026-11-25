@@ -14,7 +14,7 @@ async function login(page: Page) {
 
   // Enter email
   await page.getByPlaceholder('Enter your email').fill(validEmail);
-
+ 
   // Enter password
   await page.getByPlaceholder('Enter your password').fill(validPassword);
 
