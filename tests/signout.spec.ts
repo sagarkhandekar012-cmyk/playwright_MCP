@@ -43,7 +43,7 @@ async function login(page: Page) {
 test.describe('Sign Out', () => {
   test.slow();
  
-  
+   
   test(`signs out successfully and does not show session expired toast (${validLoginTestCase.ID})`, async ({ page }) => {
     // Login with valid user
     await login(page); 
