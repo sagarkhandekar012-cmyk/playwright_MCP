@@ -134,4 +134,4 @@ test.describe('AMOZ Company Admin login and dashboard', () => {
     // Verify that the Sign up link is visible.
     await expect(page.getByRole('link', { name: 'Sign up' })).toBeVisible();
   });
-});
+}); 
