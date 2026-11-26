@@ -31,7 +31,7 @@ test.describe('AMOZ Company Admin Login Page', () => {
     // Verify that the button displays the Arabic-language abbreviation.
     await expect(languageButton).toContainText('AR');
   });
-
+ 
   test('TC2: logs in with valid credentials and displays the dashboard', async ({ page }) => {
     // Enter the registered email address in the email field.
     await page.getByPlaceholder('Enter Email Id').fill(validEmail);
