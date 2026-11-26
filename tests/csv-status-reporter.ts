@@ -17,7 +17,7 @@ class CsvStatusReporter implements Reporter {
     }
 
     testOutcomes.set(test.id, result.status === 'passed' ? 'Pass' : 'Fail');
-  }
+  } 
 
   onEnd(): void {
     const statuses = new Map<string, 'Pass' | 'Fail'>();
