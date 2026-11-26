@@ -23,7 +23,7 @@ test.describe('AMOZ Company Admin login and dashboard', () => {
 
   test('TC1: logs in and verifies dashboard content and profile menu', async ({ page }) => {
     // Log in with the rental-company credentials and verify dashboard navigation.
-    await logIn(page);
+    await logIn(page); 
 
     // Verify that the AMOZit logo is displayed.
     await expect(page.locator('img[src*="AMOZit"]')).toBeVisible();
