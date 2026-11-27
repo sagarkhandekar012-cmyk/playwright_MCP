@@ -15,7 +15,7 @@ const loginDataPath = path.resolve(__dirname, '..', 'test_data', 'loginData.csv'
 const loginData = parse(readFileSync(loginDataPath, 'utf8'), {
   columns: true,
   skip_empty_lines: true,
-  trim: true,  
+  trim: true,   
 }) as LoginData[];
 
 test.describe('OrangeHRM login validation - CSV data driven', () => {
