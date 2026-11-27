@@ -20,7 +20,7 @@ test.describe('Login Functionality', () => {
 
     // Enter password 
     await page.getByPlaceholder('Enter your password').fill(validPassword);
-
+ 
     // Click Sign In
     await page.getByRole('button', { name: 'Sign In', exact: true }).click();
 
