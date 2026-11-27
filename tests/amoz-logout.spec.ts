@@ -8,7 +8,7 @@ test.describe('AMOZ Company Admin Logout Functionality', () => {
     await page.getByPlaceholder('Enter Password').fill('Test@123');
     await page.getByRole('button', { name: 'Login', exact: true }).click();
 
-    await expect(page).toHaveURL(/\/cleaning\/dashboard$/);
+    await expect(page).toHaveURL(/\/cleaning\/dashboard$/); 
 
     await page.getByRole('heading', { name: 'S Sai service Center' }).click();
     const signOutOption = page.getByText('Sign Out', { exact: true });
